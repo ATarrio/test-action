@@ -1,0 +1,19 @@
+name: 'Test Action'
+description: 'Some action to test GHA behaviour'
+author: 'elchalo@gmail.com'
+
+inputs: 
+  my_input:
+    description: "some input"
+    required: false
+    default: "sarasa"
+
+outputs:
+  my_output:
+    description: 'The output for this action'
+
+runs:
+  using: docker
+  image: ./images/Dockerfile
+  env:
+    MY_INPUT: ${{ inputs.my_input }}
